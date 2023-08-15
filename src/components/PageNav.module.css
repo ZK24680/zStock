@@ -6,7 +6,9 @@
   backdrop-filter: blur(3px);
   display: flex;
   align-items: center;
+}
 
+.homePage {
   position: absolute;
   z-index: 1;
 }

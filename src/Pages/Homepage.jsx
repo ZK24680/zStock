@@ -8,7 +8,7 @@ function Homepage() {
 
   return (
     <section className={styles.home}>
-      <PageNav />
+      <PageNav type={"homePage"} />
 
       <div className={styles.main}>
         <div className={styles.content}>

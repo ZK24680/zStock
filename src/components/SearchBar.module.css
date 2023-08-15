@@ -1,0 +1,13 @@
+.search {
+  width: 35%;
+  color: #f4f4f4;
+  background-color: #3ba42d;
+  border: none;
+  outline: none;
+  padding: 9px 9px;
+}
+
+.search::placeholder {
+  color: #f4f4f4;
+  letter-spacing: 1px;
+}
