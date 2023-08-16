@@ -1,0 +1,7 @@
+.list {
+  list-style-type: none;
+  width: 80%;
+  height: 60rem;
+  overflow: scroll;
+  margin: 0 auto 0 auto;
+}
