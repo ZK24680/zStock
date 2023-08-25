@@ -4,7 +4,7 @@ import ListItem from "./ListItem";
 function List() {
   return (
     <ul className={styles.list}>
-      {Array.from({ length: 15 }, (_, i) => (
+      {Array.from({ length: 30 }, (_, i) => (
         <ListItem key={i} />
       ))}
     </ul>

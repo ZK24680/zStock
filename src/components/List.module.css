@@ -1,7 +1,11 @@
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 .list {
   list-style-type: none;
   width: 80%;
-  height: 60rem;
-  overflow: scroll;
+  height: 80%;
+  overflow-y: scroll;
   margin: 0 auto 0 auto;
 }
