@@ -10,6 +10,7 @@ const StockContext = createContext();
 
 const intitalState = {
   stocks: [],
+  foundStocks: [],
   loading: false,
   technicians: [],
   error: "",
@@ -30,6 +31,19 @@ function reducer(state, action) {
     case "stocks/loaded":
       return { ...state, loading: false, stocks: action.payLoad };
 
+    case "searched":
+      let set = action.payLoad.length > 0 ? true : false;
+
+      return {
+        ...state,
+        searchQuery: action.payLoad,
+        foundStocks: set
+          ? state.stocks.filter((stock) =>
+              stock.barcode.toLowerCase().includes(action.payLoad.toLowerCase())
+            )
+          : [],
+      };
+
     case "rejected":
       return { ...state, loading: false, error: action.payLoad };
     default:
@@ -38,8 +52,10 @@ function reducer(state, action) {
 }
 
 function StockProvider({ children }) {
-  const [{ stocks, loading, technicians, error, searchQuery }, disPatch] =
-    useReducer(reducer, intitalState);
+  const [
+    { stocks, loading, technicians, error, searchQuery, foundStocks },
+    disPatch,
+  ] = useReducer(reducer, intitalState);
 
   const techUrl = useTechUrl();
   const queryUrl = `${techUrl === "technicians" ? "" : `?tech=${techUrl}`}`;
@@ -96,6 +112,8 @@ function StockProvider({ children }) {
         technicians,
         searchQuery,
         techUrl,
+        disPatch,
+        foundStocks,
       }}
     >
       {children}

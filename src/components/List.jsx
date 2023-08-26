@@ -3,13 +3,13 @@ import styles from "./List.module.css";
 import ListItem from "./ListItem";
 
 function List() {
-  const { stocks } = useStock();
+  const { stocks, foundStocks, searchQuery } = useStock();
 
-  console.log(stocks);
+  const displayStocks = searchQuery.length > 0 ? foundStocks : stocks;
 
   return (
     <ul className={styles.list}>
-      {stocks.map((stock) => (
+      {displayStocks.map((stock) => (
         <ListItem stock={stock} key={stock.id} />
       ))}
     </ul>
