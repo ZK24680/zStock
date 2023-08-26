@@ -1,12 +1,18 @@
 import styles from "./ListItem.module.css";
-function ListItem() {
+import PropTypes from "prop-types";
+
+ListItem.propTypes = {
+  stock: PropTypes.object,
+};
+
+function ListItem({ stock }) {
   return (
     <li className={styles.listItem}>
-      <p>6424</p>
-      <p>barcode</p>
-      <p className={styles.takeTwo}>Redmi Note 7 pro Speaker jajaj</p>
-      <p>technician</p>
-      <p>status</p>
+      <p>{stock.vouncher}</p>
+      <p>{stock.barcode}</p>
+      <p className={styles.takeTwo}>{stock.item}</p>
+      <p>{stock.tech}</p>
+      <p>{stock.status}</p>
     </li>
   );
 }

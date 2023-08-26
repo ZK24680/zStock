@@ -1,4 +1,4 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import useTechUrl from "../hooks/useTechUrl";
 import PropTypes from "prop-types";
 
@@ -95,6 +95,7 @@ function StockProvider({ children }) {
         error,
         technicians,
         searchQuery,
+        techUrl,
       }}
     >
       {children}
@@ -102,4 +103,13 @@ function StockProvider({ children }) {
   );
 }
 
-export { StockProvider };
+function useStock() {
+  const context = useContext(StockContext);
+
+  if (context === undefined)
+    throw new Error("Using useSotck outside of the provider");
+
+  return context;
+}
+
+export { StockProvider, useStock };
