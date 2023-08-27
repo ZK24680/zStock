@@ -20,3 +20,20 @@
 .app {
   padding: 10px 20px;
 }
+
+.back {
+  background-color: #7d7e7c;
+  padding: 10px 20px;
+
+  border-radius: 5px;
+}
+
+.back:hover {
+  background-color: #717e6b;
+}
+
+.submit {
+  background-color: #22601a;
+  padding: 10px 20px;
+  border-radius: 5px;
+}

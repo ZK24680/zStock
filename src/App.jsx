@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Homepage from "./Pages/Homepage";
 import Applayout from "./Pages/Applayout";
 import List from "./components/List";
+import FormLayout from "./Pages/FormLayout";
 import { StockProvider } from "./contexts/StockContext";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route index element={<Navigate to={"technicians"} />} />
           <Route path="/app/:technicians" element={<List />} />
         </Route>
+        <Route path="form" element={<FormLayout />} />
       </Routes>
     </BrowserRouter>
   );

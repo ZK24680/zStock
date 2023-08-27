@@ -23,7 +23,7 @@ const TECH_URL = "http://localhost:9000/technicians";
 function reducer(state, action) {
   switch (action.type) {
     case "loading":
-      return { ...state, loading: true };
+      return { ...state, loading: true, error: "" };
 
     case "technician/loaded":
       return { ...state, loading: false, technicians: action.payLoad };
