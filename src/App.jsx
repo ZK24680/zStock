@@ -9,7 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index replace element={<Homepage />} />
+        <Route index element={<Homepage />} />
         <Route
           path="app"
           element={
@@ -18,7 +18,7 @@ function App() {
             </StockProvider>
           }
         >
-          <Route index element={<Navigate to={"technicians"} />} />
+          <Route index element={<Navigate replace to={"technicians"} />} />
           <Route path="/app/:technicians" element={<List />} />
         </Route>
         <Route path="form" element={<FormLayout />} />

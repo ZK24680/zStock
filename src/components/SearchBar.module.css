@@ -1,5 +1,12 @@
+.search-bar {
+  width: 40%;
+  background-color: #3ba42d;
+  display: flex;
+  justify-content: space-between;
+}
+
 .search {
-  width: 35%;
+  width: 75%;
   color: #f4f4f4;
   background-color: #3ba42d;
   border: none;
@@ -10,4 +17,20 @@
 .search::placeholder {
   color: #f4f4f4;
   letter-spacing: 1px;
+}
+
+.selectGroup {
+  width: 25%;
+  background-color: #22601a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select {
+  height: 100%;
+  color: #fff;
+  border: none;
+  background: none;
+  outline: none;
 }

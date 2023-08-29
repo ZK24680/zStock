@@ -14,6 +14,10 @@
   box-shadow: 5px 5px 25px #50555049;
 }
 
+.form-loading {
+  filter: brightness(80%);
+}
+
 .form-group {
   margin-bottom: 2rem;
 }
@@ -45,6 +49,7 @@
   width: 20%;
   margin-left: 10px;
   border: 1px solid #0e280b;
+  outline: none;
   background-color: #adbfab;
   border: none;
   padding: 3px;

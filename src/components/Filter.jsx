@@ -10,8 +10,13 @@ function Filter() {
   const [filter, setFilter] = useState(techUrl);
 
   useEffect(() => {
+    if (filter === undefined) return;
     navigate(`${filter}`);
   }, [filter]);
+
+  useEffect(() => {
+    setFilter(techUrl);
+  }, [techUrl]);
 
   return (
     <select

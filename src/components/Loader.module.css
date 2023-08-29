@@ -4,12 +4,13 @@
   border: 15px dotted #326e2b;
   border-radius: 50%;
   display: inline-block;
-  position: relative;
+
   box-sizing: border-box;
   animation: rotation 2s linear infinite;
   position: absolute;
   left: 50%;
   top: 50%;
+  z-index: 1;
 
   transform: translate(-50%, -50%);
 }

@@ -32,17 +32,37 @@ function reducer(state, action) {
       return { ...state, loading: false, stocks: action.payLoad };
 
     case "searched":
-      let set = action.payLoad.length > 0 ? true : false;
+      // eslint-disable-next-line no-case-declarations
+      let condition = action.payLoad.value.length > 0 ? true : false;
+      // eslint-disable-next-line no-case-declarations
+      let searchValue;
+
+      if (action.payLoad.searchMethod === "barcode") {
+        searchValue = condition
+          ? state.stocks.filter((stock) =>
+              stock.barcode
+                .toLowerCase()
+                .includes(action.payLoad.value.toLowerCase())
+            )
+          : [];
+      }
+
+      if (action.payLoad.searchMethod === "vouncher") {
+        searchValue = condition
+          ? state.stocks.filter((stock) =>
+              stock.vouncher.toString().includes(action.payLoad.value)
+            )
+          : [];
+      }
 
       return {
         ...state,
-        searchQuery: action.payLoad,
-        foundStocks: set
-          ? state.stocks.filter((stock) =>
-              stock.barcode.toLowerCase().includes(action.payLoad.toLowerCase())
-            )
-          : [],
+        searchQuery: action.payLoad.value,
+        foundStocks: searchValue,
       };
+
+    case "searchMethod":
+      return { ...state, searchQuery: "" };
 
     case "rejected":
       return { ...state, loading: false, error: action.payLoad };
@@ -57,6 +77,8 @@ function StockProvider({ children }) {
     disPatch,
   ] = useReducer(reducer, intitalState);
 
+  const totalStock = searchQuery ? foundStocks.length : stocks.length;
+  console.log(searchQuery, foundStocks, totalStock);
   const techUrl = useTechUrl();
   const queryUrl = `${techUrl === "technicians" ? "" : `?tech=${techUrl}`}`;
 
@@ -83,6 +105,7 @@ function StockProvider({ children }) {
   }, []);
 
   useEffect(() => {
+    if (techUrl === undefined) return;
     async function fetchStockData() {
       disPatch({ type: "loading" });
 
@@ -114,6 +137,7 @@ function StockProvider({ children }) {
         techUrl,
         disPatch,
         foundStocks,
+        totalStock,
       }}
     >
       {children}

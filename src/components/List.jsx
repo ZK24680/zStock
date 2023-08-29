@@ -9,12 +9,14 @@ function List() {
 
   const displayStocks = searchQuery.length > 0 ? foundStocks : stocks;
 
+  const sorted = displayStocks.slice().sort((a, b) => a.vouncher - b.vouncher);
+
   if (error) return <Message message={error} />;
   if (loading) return <Loader />;
 
   return (
     <ul className={styles.list}>
-      {displayStocks.map((stock) => (
+      {sorted.map((stock) => (
         <ListItem stock={stock} key={stock.id} />
       ))}
     </ul>

@@ -8,6 +8,16 @@
   align-items: center;
 }
 
+.app {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 55px 0 55px;
+}
+
+.app p {
+  font-size: 2rem;
+}
+
 .homePage {
   position: absolute;
   left: 0;

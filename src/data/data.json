@@ -1,8 +1,13 @@
 {
-  "technicians": ["MKA", "AKW", "THZ", "CN"],
+  "technicians": [
+    "MKA",
+    "AKW",
+    "THZ",
+    "CN"
+  ],
   "stocks": [
     {
-      "vouncher": 6573,
+      "vouncher": 6570,
       "barcode": "MIB00034",
       "item": "Redmi Note7 pro",
       "tech": "MKA",
@@ -18,7 +23,7 @@
       "id": 7363344
     },
     {
-      "vouncher": 6573,
+      "vouncher": 6570,
       "barcode": "OIB00034",
       "item": "oppo f 21 pro",
       "tech": "MKA",
@@ -26,7 +31,7 @@
       "id": 7363422356
     },
     {
-      "vouncher": 6573,
+      "vouncher": 6579,
       "barcode": "MIB00034",
       "item": "Redmi Note7 pro",
       "tech": "BMN",
@@ -34,12 +39,44 @@
       "id": 73634367030
     },
     {
-      "vouncher": 6573,
+      "vouncher": 8000,
       "barcode": "AAB00034",
       "item": "Redmi Note7 pro",
       "tech": "MKA",
       "status": "using",
       "id": 73634346245210
+    },
+    {
+      "vouncher": 6276,
+      "barcode": "MIB00053",
+      "item": "RMN8 Speaker",
+      "tech": "MKA",
+      "status": "using",
+      "id": 73634346245211
+    },
+    {
+      "vouncher": 6893,
+      "barcode": "VIB00056",
+      "item": "RMN9 Chargin Flex",
+      "tech": "THZ",
+      "status": "using",
+      "id": 73634346245212
+    },
+    {
+      "vouncher": 6745,
+      "barcode": "MVP00034",
+      "item": "RMN10 pro TL",
+      "tech": "THZ",
+      "status": "using",
+      "id": 73634346245213
+    },
+    {
+      "vouncher": 6745,
+      "barcode": "MVP00088",
+      "item": "adfa",
+      "tech": "MKA",
+      "status": "using",
+      "id": 73634346245214
     }
   ]
 }
